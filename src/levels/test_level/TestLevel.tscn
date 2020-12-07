@@ -1,0 +1,138 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://src/characters/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tile.png" type="Texture" id=2]
+[ext_resource path="res://assets/floor.png" type="Texture" id=3]
+[ext_resource path="res://assets/rubble.png" type="Texture" id=4]
+[ext_resource path="res://src/levels/test_level/props/TestWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/materials/RoadMaterial.tres" type="Material" id=6]
+[ext_resource path="res://src/levels/test_level/props/TestBox.tscn" type="PackedScene" id=7]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 100, 100 )
+
+[sub_resource type="SpatialMaterial" id=2]
+params_diffuse_mode = 1
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
+uv1_triplanar = true
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50 )
+
+[sub_resource type="PlaneMesh" id=4]
+size = Vector2( 8, 100 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( 4, 0, 50, -4, 0, 50, 4, 0, -50, -4, 0, 50, -4, 0, -50, 4, 0, -50 )
+
+[sub_resource type="PlaneMesh" id=6]
+size = Vector2( 8, 46 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( 4, 0, 23, -4, 0, 23, 4, 0, -23, -4, 0, 23, -4, 0, -23, 4, 0, -23 )
+
+[sub_resource type="CubeMesh" id=8]
+size = Vector3( 46, 0.5, 46 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
+uv1_triplanar = true
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( -23, 0.25, 23, 23, 0.25, 23, -23, -0.25, 23, 23, 0.25, 23, 23, -0.25, 23, -23, -0.25, 23, 23, 0.25, -23, -23, 0.25, -23, 23, -0.25, -23, -23, 0.25, -23, -23, -0.25, -23, 23, -0.25, -23, 23, 0.25, 23, 23, 0.25, -23, 23, -0.25, 23, 23, 0.25, -23, 23, -0.25, -23, 23, -0.25, 23, -23, 0.25, -23, -23, 0.25, 23, -23, -0.25, -23, -23, 0.25, 23, -23, -0.25, 23, -23, -0.25, -23, 23, 0.25, 23, -23, 0.25, 23, 23, 0.25, -23, -23, 0.25, 23, -23, 0.25, -23, 23, 0.25, -23, -23, -0.25, 23, 23, -0.25, 23, -23, -0.25, -23, 23, -0.25, 23, 23, -0.25, -23, -23, -0.25, -23 )
+
+[sub_resource type="CubeMesh" id=11]
+size = Vector3( 40, 10, 40 )
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
+uv1_triplanar = true
+
+[sub_resource type="ConcavePolygonShape" id=13]
+data = PoolVector3Array( -20, 5, 20, 20, 5, 20, -20, -5, 20, 20, 5, 20, 20, -5, 20, -20, -5, 20, 20, 5, -20, -20, 5, -20, 20, -5, -20, -20, 5, -20, -20, -5, -20, 20, -5, -20, 20, 5, 20, 20, 5, -20, 20, -5, 20, 20, 5, -20, 20, -5, -20, 20, -5, 20, -20, 5, -20, -20, 5, 20, -20, -5, -20, -20, 5, 20, -20, -5, 20, -20, -5, -20, 20, 5, 20, -20, 5, 20, 20, 5, -20, -20, 5, 20, -20, 5, -20, 20, 5, -20, -20, -5, 20, 20, -5, 20, -20, -5, -20, 20, -5, 20, 20, -5, -20, -20, -5, -20 )
+
+[node name="TestLevel" type="Spatial"]
+
+[node name="Rubble" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Rubble"]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Rubble/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Rubble/MeshInstance/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Props" type="Node" parent="."]
+
+[node name="Road" type="Spatial" parent="Props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Props/Road"]
+mesh = SubResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Props/Road/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Props/Road/MeshInstance/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Road2" type="Spatial" parent="Props"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 27, 0.1, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Props/Road2"]
+material_override = ExtResource( 6 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Props/Road2/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Props/Road2/MeshInstance/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="Sidewalk" type="MeshInstance" parent="Props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 27 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Props/Sidewalk"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Props/Sidewalk/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="House" type="MeshInstance" parent="Props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 30 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="Props/House"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Props/House/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="TestWall" parent="Props" instance=ExtResource( 5 )]
+transform = Transform( -0.453586, 0, 0.891212, 0, 1, 0, -0.891212, 0, -0.453586, -1.92314, 0.6, 7.844 )
+
+[node name="TestWall2" parent="Props" instance=ExtResource( 5 )]
+transform = Transform( 0.487021, 0, 0.87339, 0, 1, 0, -0.87339, 0, 0.487021, 1.45336, 0.6, 7.844 )
+
+[node name="TestWall3" parent="Props" instance=ExtResource( 5 )]
+transform = Transform( -0.988762, 0, -0.149501, 0, 1, 0, 0.149501, 0, -0.988762, 6.15236, 0.6, 1.90664 )
+
+[node name="TestBox" parent="Props" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.25, 6 )
+
+[node name="TestBox2" parent="Props" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.74053, 1.25, 10.705 )
+
+[node name="TestBox3" parent="Props" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.14545, 3.2945, 7.13327 )
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="Player" parent="Characters" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.31752, 0 )
