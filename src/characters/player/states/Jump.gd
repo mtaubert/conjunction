@@ -12,14 +12,14 @@ func exit() -> void:
 	state_machine.change_state("Idle")
 
 
-func physics_process(delta):
+func physics_process(delta:float):
 	.physics_process(delta)
 	var input:Vector3 = _get_input_vector()
 	input.x = 0
 	input.z = clamp(input.z, 0, 1)
 	input.normalized()
 	
-	var direction = (character.transform.basis.z * input.z + character.transform.basis.x * input.x)
+	var direction:Vector3 = (character.transform.basis.z * input.z + character.transform.basis.x * input.x)
 	if running_start:
 			direction *= character.sprint_modifier
 	_handle_movement(direction, delta)

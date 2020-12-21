@@ -1,6 +1,6 @@
 extends PlayerState
 
-func physics_process(delta):
+func physics_process(delta:float):
 	.physics_process(delta)
 	
 	if Input.is_action_pressed("jump") and character.is_on_floor():

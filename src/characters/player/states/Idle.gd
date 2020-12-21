@@ -4,7 +4,7 @@ func enter() -> void:
 	character.current_velocity = Vector3.ZERO
 
 
-func physics_process(delta) -> void:
+func physics_process(delta:float) -> void:
 	if _get_input_vector() != Vector3.ZERO:
 		state_machine.change_state("Move")
 		return
