@@ -27,12 +27,12 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://src/characters/base/State.gd"
+"path": "res://src/characters/state_machines/State.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://src/characters/base/StateMachine.gd"
+"path": "res://src/characters/state_machines/StateMachine.gd"
 } ]
 _global_script_class_icons={
 "Character": "",
@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Conjunction"
-run/main_scene="res://src/levels/test_level/TestLevel.tscn"
+run/main_scene="res://src/levels/test_level/Level.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -54,8 +54,6 @@ EventBus="*res://src/shared/EventBus.gd"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"

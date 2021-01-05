@@ -17,7 +17,7 @@ func _input(event:InputEvent) -> void:
 
 
 func _process(delta) -> void:
-	_update_raycast()
+#	_update_raycast()
 	var camera_rotation:Vector3 = Vector3(mouse_delta.y, mouse_delta.x, 0) * look_sensitivity * delta
 	
 	rotation_degrees.x += camera_rotation.x
@@ -28,9 +28,9 @@ func _process(delta) -> void:
 	mouse_delta = Vector2()
 
 
-func _update_raycast() -> void:
-	if $Camera/RayCast.is_colliding():
-		$Camera/MeshInstance.show()
-		$Camera/MeshInstance.global_transform = Transform($Camera/MeshInstance.global_transform.basis, $Camera/RayCast.get_collision_point())
-	else:
-		$Camera/MeshInstance.hide()
+#func _update_raycast() -> void:
+#	if $Camera/RayCast.is_colliding():
+#		$Camera/MeshInstance.show()
+#		$Camera/MeshInstance.global_transform = Transform($Camera/MeshInstance.global_transform.basis, $Camera/RayCast.get_collision_point())
+#	else:
+#		$Camera/MeshInstance.hide()

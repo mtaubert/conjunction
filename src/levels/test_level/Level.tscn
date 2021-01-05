@@ -1,0 +1,261 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/characters/player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/levels/materials/base_debug_material.tres" type="Material" id=3]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 100, 100 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50 )
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 1, 10, 98 )
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( -0.5, 5, 50, 0.5, 5, 50, -0.5, -5, 50, 0.5, 5, 50, 0.5, -5, 50, -0.5, -5, 50, 0.5, 5, -50, -0.5, 5, -50, 0.5, -5, -50, -0.5, 5, -50, -0.5, -5, -50, 0.5, -5, -50, 0.5, 5, 50, 0.5, 5, -50, 0.5, -5, 50, 0.5, 5, -50, 0.5, -5, -50, 0.5, -5, 50, -0.5, 5, -50, -0.5, 5, 50, -0.5, -5, -50, -0.5, 5, 50, -0.5, -5, 50, -0.5, -5, -50, 0.5, 5, 50, -0.5, 5, 50, 0.5, 5, -50, -0.5, 5, 50, -0.5, 5, -50, 0.5, 5, -50, -0.5, -5, 50, 0.5, -5, 50, -0.5, -5, -50, 0.5, -5, 50, 0.5, -5, -50, -0.5, -5, -50 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( -0.5, 5, 49, 0.5, 5, 49, -0.5, -5, 49, 0.5, 5, 49, 0.5, -5, 49, -0.5, -5, 49, 0.5, 5, -49, -0.5, 5, -49, 0.5, -5, -49, -0.5, 5, -49, -0.5, -5, -49, 0.5, -5, -49, 0.5, 5, 49, 0.5, 5, -49, 0.5, -5, 49, 0.5, 5, -49, 0.5, -5, -49, 0.5, -5, 49, -0.5, 5, -49, -0.5, 5, 49, -0.5, -5, -49, -0.5, 5, 49, -0.5, -5, 49, -0.5, -5, -49, 0.5, 5, 49, -0.5, 5, 49, 0.5, 5, -49, -0.5, 5, 49, -0.5, 5, -49, 0.5, 5, -49, -0.5, -5, 49, 0.5, -5, 49, -0.5, -5, -49, 0.5, -5, 49, 0.5, -5, -49, -0.5, -5, -49 )
+
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 60, 20, 2 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( -30, 10, 1, 30, 10, 1, -30, -10, 1, 30, 10, 1, 30, -10, 1, -30, -10, 1, 30, 10, -1, -30, 10, -1, 30, -10, -1, -30, 10, -1, -30, -10, -1, 30, -10, -1, 30, 10, 1, 30, 10, -1, 30, -10, 1, 30, 10, -1, 30, -10, -1, 30, -10, 1, -30, 10, -1, -30, 10, 1, -30, -10, -1, -30, 10, 1, -30, -10, 1, -30, -10, -1, 30, 10, 1, -30, 10, 1, 30, 10, -1, -30, 10, 1, -30, 10, -1, 30, 10, -1, -30, -10, 1, 30, -10, 1, -30, -10, -1, 30, -10, 1, 30, -10, -1, -30, -10, -1 )
+
+[sub_resource type="CubeMesh" id=8]
+size = Vector3( 60, 2, 10 )
+
+[sub_resource type="ConcavePolygonShape" id=9]
+data = PoolVector3Array( -30, 1, 5, 30, 1, 5, -30, -1, 5, 30, 1, 5, 30, -1, 5, -30, -1, 5, 30, 1, -5, -30, 1, -5, 30, -1, -5, -30, 1, -5, -30, -1, -5, 30, -1, -5, 30, 1, 5, 30, 1, -5, 30, -1, 5, 30, 1, -5, 30, -1, -5, 30, -1, 5, -30, 1, -5, -30, 1, 5, -30, -1, -5, -30, 1, 5, -30, -1, 5, -30, -1, -5, 30, 1, 5, -30, 1, 5, 30, 1, -5, -30, 1, 5, -30, 1, -5, 30, 1, -5, -30, -1, 5, 30, -1, 5, -30, -1, -5, 30, -1, 5, 30, -1, -5, -30, -1, -5 )
+
+[sub_resource type="CubeMesh" id=10]
+size = Vector3( 60, 1, 8 )
+
+[sub_resource type="CubeMesh" id=11]
+size = Vector3( 50, 1, 8 )
+
+[sub_resource type="ConcavePolygonShape" id=12]
+data = PoolVector3Array( -25, 0.5, 4, 25, 0.5, 4, -25, -0.5, 4, 25, 0.5, 4, 25, -0.5, 4, -25, -0.5, 4, 25, 0.5, -4, -25, 0.5, -4, 25, -0.5, -4, -25, 0.5, -4, -25, -0.5, -4, 25, -0.5, -4, 25, 0.5, 4, 25, 0.5, -4, 25, -0.5, 4, 25, 0.5, -4, 25, -0.5, -4, 25, -0.5, 4, -25, 0.5, -4, -25, 0.5, 4, -25, -0.5, -4, -25, 0.5, 4, -25, -0.5, 4, -25, -0.5, -4, 25, 0.5, 4, -25, 0.5, 4, 25, 0.5, -4, -25, 0.5, 4, -25, 0.5, -4, 25, 0.5, -4, -25, -0.5, 4, 25, -0.5, 4, -25, -0.5, -4, 25, -0.5, 4, 25, -0.5, -4, -25, -0.5, -4 )
+
+[sub_resource type="CubeMesh" id=13]
+size = Vector3( 2, 13, 2 )
+
+[sub_resource type="ConcavePolygonShape" id=14]
+data = PoolVector3Array( -1, 6.5, 1, 1, 6.5, 1, -1, -6.5, 1, 1, 6.5, 1, 1, -6.5, 1, -1, -6.5, 1, 1, 6.5, -1, -1, 6.5, -1, 1, -6.5, -1, -1, 6.5, -1, -1, -6.5, -1, 1, -6.5, -1, 1, 6.5, 1, 1, 6.5, -1, 1, -6.5, 1, 1, 6.5, -1, 1, -6.5, -1, 1, -6.5, 1, -1, 6.5, -1, -1, 6.5, 1, -1, -6.5, -1, -1, 6.5, 1, -1, -6.5, 1, -1, -6.5, -1, 1, 6.5, 1, -1, 6.5, 1, 1, 6.5, -1, -1, 6.5, 1, -1, 6.5, -1, 1, 6.5, -1, -1, -6.5, 1, 1, -6.5, 1, -1, -6.5, -1, 1, -6.5, 1, 1, -6.5, -1, -1, -6.5, -1 )
+
+[node name="Level" type="Spatial"]
+
+[node name="Geometry" type="Node" parent="."]
+
+[node name="Floor" type="MeshInstance" parent="Geometry"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/Floor/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Wall" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.5, 5, 0 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/Wall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/Wall/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Wall2" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5, 5, 0 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/Wall2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/Wall2/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Wall3" type="MeshInstance" parent="Geometry"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 5, 49.5 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/Wall3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/Wall3/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Wall4" type="MeshInstance" parent="Geometry"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 5, -49.5 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/Wall4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/Wall4/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 28 )
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Geometry"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 10, -3 )
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance3/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Geometry"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29, 10, -3 )
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance4/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -34 )
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance2/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -28 )
+mesh = SubResource( 8 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance5/StaticBody"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="Geometry"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, 13, -3 )
+mesh = SubResource( 10 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="Geometry"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 13, -8 )
+mesh = SubResource( 11 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance7/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 6, 16 )
+mesh = SubResource( 13 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance8/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 6, 16 )
+mesh = SubResource( 13 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance9/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 6, 4 )
+mesh = SubResource( 13 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance10/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance11" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 6, 4 )
+mesh = SubResource( 13 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance11"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance11/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance12" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 6, -8 )
+mesh = SubResource( 13 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance12/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance13" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 6, -8 )
+mesh = SubResource( 13 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance13"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance13/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance14" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 6, -19 )
+mesh = SubResource( 13 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance14"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance14/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance15" type="MeshInstance" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 6, -19 )
+mesh = SubResource( 13 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Geometry/MeshInstance15"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Geometry/MeshInstance15/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="Props" type="Node" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Props"]
+transform = Transform( 0.707107, 0.183013, -0.683013, 0.707107, -0.183013, 0.683013, 0, -0.965926, -0.258819, -16, 19, 0 )
+shadow_enabled = true
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="Player" parent="Characters" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71267, 3.7244, -4.58598 )
+character_name = "Character"
+movement_speed = 5.0
+sprint_modifier = 1.4
+jump_force = 10.0
+gravity = 15.0
+local_gravity_direction = Vector3( 0, -3, 0 )

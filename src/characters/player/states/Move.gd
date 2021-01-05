@@ -21,5 +21,5 @@ func physics_process(delta:float):
 func _handle_movement(direction:Vector3, delta:float) -> void:
 	._handle_movement(direction, delta)
 	
-	character.current_velocity = character.move_and_slide_with_snap(character.current_velocity, character.local_gravity_direction, Vector3.UP, true, 4, PI/4, false)
+	character.current_velocity = character.move_and_slide_with_snap(character.current_velocity, character.local_gravity_direction, Vector3.UP, true, 4, deg2rad(50), false)
 	_push_moveable_rigidbodies()

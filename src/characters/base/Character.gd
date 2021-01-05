@@ -16,3 +16,4 @@ func _ready() -> void:
 
 func connect_signals() -> void:
 	pass
+
